@@ -1,1 +1,25 @@
-{"bin": {"tls-arz": "./tls-arz.js"}, "dependencies": {}, "description": "L7/L4 flooder lengkap dengan semua method: h2, http1, tcp, udp, slow, cf, mix. Zero dependensi, stdlib only.", "devDependencies": {}, "engines": {">=18.0.0": null}, "keywords": ["flooder", "l7", "l4", "http2", "tcp", "udp", "cloudflare", "bypass"], "license": "MIT", "main": "tls-arz.js", "name": "tls-arz", "scripts": {"start": "node tls-arz.js"}, "version": "2.0.0"}
+{
+  "name": "tls-arz",
+  "version": "2.0.0",
+  "description": "Zero-dependency Node.js network testing tool.",
+  "main": "tls-arz.js",
+  "bin": {
+    "tls-arz": "./tls-arz.js"
+  },
+  "scripts": {
+    "start": "node tls-arz.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "nodejs",
+    "http2",
+    "http1",
+    "tcp",
+    "udp"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
